@@ -39,4 +39,77 @@ topics 进行测试
 ## tricks
 * 使用python的字典数据结构来构建dictionary，提高查询效率
 * 使用python的集合数据结构存储postings，提高交并补运算效率， **代码简洁**
-## **详细代码及输出见ipynb文件**
+## **详细代码及输出见inverted_index1.ipynb**
+
+---
+---
+---
+
+# 改进版 (inverted_index2.ipynb)
+## 将postings的数据结构改为**链表**，即python中的list
+## **定义有序list的 and or not 运算**
+```
+def union_list(l1, l2):
+    result = []
+    i = 0
+    j = 0
+    while (i < len(l1) and j < len(l2)):
+        if l1[i] == l2[j]:
+            result.append(l1[i])
+            i += 1
+            j += 1
+        elif l1[i] < l2[j]:
+            result.append(l1[i])
+            i += 1
+        else:
+            result.append(l2[j])
+            j += 1
+    for x in l1[i:]:
+        result.append(x)
+    for x in l2[j:]:
+        result.append(x)
+    return result
+
+def intersection_list(l1, l2):
+    result = []
+    i = 0
+    j = 0
+    while (i < len(l1) and j < len(l2)):
+        if l1[i] == l2[j]:
+            result.append(l1[i])
+            i += 1
+            j += 1
+        elif l1[i] < l2[j]:
+            i += 1
+        else:
+            j += 1
+    return result
+
+def difference_list(l1,l2):
+    result = []
+    i = 0
+    j = 0
+    while (i < len(l1) and j < len(l2)):
+        if l1[i] == l2[j]:
+            i += 1
+            j += 1
+        elif l1[i] < l2[j]:
+            result.append(l1[i])
+            i += 1
+        else:
+            j += 1
+    for x in l1[i:]:
+        result.append(x)
+    return result
+```
+## 解析查询表达式，新增对于（）括号运算的支持
+* 将and or not分别转化为& + -
+* [中缀表达式转化为后缀表达式](https://blog.csdn.net/antineutrino/article/details/6763722)
+## 输出中关键词加红强调
+## 查询示例
+* 已支持带括号的复杂查询
+* 查询关键词进行了标红处理
+
+![Ron AND Weasley OR ( Harry AND Potter NOT Birthday)](query_result2.png)
+![hermione](query_result3.png)
+![weasley or ron not ( Harry not potter )](query_result4.png)
