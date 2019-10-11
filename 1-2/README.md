@@ -21,3 +21,14 @@
 2. posting list 按tf由大到小排序
 
     ![posting list](posting_list.png)
+3. postings融合时使用集合运算
+4. query的分词由split()改为nltk.word_tokenize()
+5. 预先计算每个文档的tf向量的L2范数
+```
+tokens = [preprocess(x) for x in tweets] # 每个doc的分词
+length = [nltk.FreqDist(x) for x in tokens] # 每个doc的词频统计信息
+length = [list(x.values()) for x in length] # 每个doc的tf向量
+length = [math.sqrt(sum([tf*tf for tf in x])) for x in length] # 每个doc的tf向量的L2范数
+```
+6. 解析查询语句时直接分词，无需考虑and、or、not
+7. 
