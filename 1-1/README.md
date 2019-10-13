@@ -33,9 +33,9 @@ topics 进行测试
     * 其余词转化为dictionary['term']
     * 使用 **eval()** 将转化后的查询语句转化为python命令，得到查询结果
 5. 查询交互
-![](GUI.bmp)
+![](img/GUI.bmp)
 6. 查询结果
-![](query_result.bmp)
+![](img/query_result.bmp)
 ## tricks
 * 使用python的字典数据结构来构建dictionary，提高查询效率
 * 使用python的集合数据结构存储postings，提高交并补运算效率， **代码简洁**
@@ -110,6 +110,8 @@ def difference_list(l1,l2):
 * 已支持带括号的复杂查询
 * 查询关键词进行了标红处理
 
-![Ron AND Weasley OR ( Harry AND Potter NOT Birthday)](query_result2.png)
-![hermione](query_result3.png)
-![weasley or ron not ( Harry not potter )](query_result4.png)
+![Ron AND Weasley OR ( Harry AND Potter NOT Birthday)](img/query_result2.png)
+
+![hermione](img/query_result3.png)
+
+![weasley or ron not ( Harry not potter )](img/query_result4.png)
