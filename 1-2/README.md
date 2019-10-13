@@ -83,3 +83,17 @@ NORM = {
 ![merging_of_us10](img/merging_of_us10.png)
 
 ![muscle_pain_from_statins15](img/muscle_pain_from_statins15.png)
+### 不同notation检索效果对比
+#### 查询任务：Chinua Achebe death
+![lnc.ltn](img/lnc.ltn.png)
+
+![nnc.ltn](img/nnc.ltn.png)
+
+![ltc.ltn.png](img/ltc.ltn.png)
+
+![lnc.lnn](img/lnc.lnn.png)
+
+![lnn.ltn](img/lnn.ltn.png)
+
+![bpn.ltn](img/bpn.ltn.png)
+
