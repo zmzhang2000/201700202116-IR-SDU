@@ -32,13 +32,28 @@ length = [math.sqrt(sum([tf*tf for tf in x])) for x in length] # 每个doc的tf�
 ```
 #### 解析查询语句时直接分词，无需考虑and、or、not
 #### 定义top-K和计算w函数
-#### 使用字典结构实现解析SMART notation(未完全实现)
+#### 使用字典结构实现解析SMART notation(未实现所有)
+支持：
+* TF(n, l, a, b):
+    * natural
+    * logarithm
+    * augmented
+    * boolean
+* DF(n, t, p):
+    * no
+    * idf
+    * prob idf
+* NORM(n, c)
+    * none
+    * cosine
 ```
 TF = {
     'n':lambda tf:tf,
     'l':lambda tf:[1+math.log(x) if x>=1 else 0 for x in tf],
     'a':lambda tf:[0.5+0.5*x/max(tf) if max(tf)>0 else 0 for x in tf],
     'b':lambda tf:[1 if x>0 else 0 for x in tf],
+    
+    # TODO 未实现
     'L':lambda tf:[(1+math.log(x))/(1+math.log(sum(tf)/len(tf))) for x in tf]
 }
 
