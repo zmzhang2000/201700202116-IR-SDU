@@ -20,7 +20,7 @@
 #### posting增加tf信息
 #### posting list
 
-![posting list](posting_list.png)
+![posting list](img/posting_list.png)
 #### postings融合时使用集合运算
 #### query的分词由split()改为nltk.word_tokenize()
 #### 预先计算每个文档的tf向量的L2范数
@@ -58,4 +58,13 @@ NORM = {
 }
 ```
 ## top-K实现
-![CosineScoreAlgorithm](CosineScore.jpg)
+![CosineScoreAlgorithm](img/CosineScore.jpg)
+## 实现效果
+### GUI
+![GUI](img/gui.png)
+### 检索示例
+![ron_weasley_birthday10](img/ron_weasley_birthday10.png)
+
+![merging_of_us10](img/merging_of_us10.png)
+
+![muscle_pain_from_statins15](img/muscle_pain_from_statins15.png)
