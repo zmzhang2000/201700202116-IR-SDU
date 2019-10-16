@@ -46,7 +46,7 @@ length = [math.sqrt(sum([tf*tf for tf in x])) for x in length] # 每个doc的tf�
 * NORM(n, c)
     * none
     * cosine
-```
+```python
 TF = {
     'n':lambda tf:tf,
     'l':lambda tf:[1+math.log(x) if x>=1 else 0 for x in tf],
