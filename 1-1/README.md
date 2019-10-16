@@ -48,7 +48,7 @@ topics 进行测试
 # 改进版 (inverted_index2.ipynb)
 ## 将postings的数据结构改为**链表**，即python中的list
 ## **定义有序list的 and or not 运算**
-```
+```python
 def union_list(l1, l2):
     result = []
     i = 0
